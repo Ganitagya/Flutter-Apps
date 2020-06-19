@@ -1,4 +1,4 @@
-# ecommerceapp
+# Insurance Claim App
 
 A new Flutter application.
 
