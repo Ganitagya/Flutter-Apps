@@ -12,5 +12,5 @@ This is a collection of some of my flutter hands ons
   
  3. git clone https://github.com/Ganitagya/Flutter-Apps.git
  4. cd Flutter-Apps/WebApps/groupe_vyv_app
- 5. flutter run -d web-server
+ 5. flutter run -d web-server --web-port=33051
  6. Open a browser and use the URL : http://localhost:33051
