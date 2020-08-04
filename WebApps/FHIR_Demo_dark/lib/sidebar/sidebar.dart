@@ -51,30 +51,6 @@ class _SideBarState extends State<SideBar>
     }
   }
 
-  int getColorHexFromStr(String colorStr) {
-    colorStr = "FF" + colorStr;
-    colorStr = colorStr.replaceAll("#", "");
-
-    int val = 0;
-    int len = colorStr.length;
-
-    for (int i = 0; i < len; i++) {
-      int hexDigit = colorStr.codeUnitAt(i);
-      if (hexDigit >= 48 && hexDigit <= 57) {
-        val += (hexDigit - 48) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 65 && hexDigit <= 70) {
-        //A..F
-        val += (hexDigit - 55) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 97 && hexDigit <= 102) {
-        //A..F
-        val += (hexDigit - 87) * (1 << (4 * (len - 1 - i)));
-      } else {
-        throw new FormatException("An error occurred while converting a color");
-      }
-    }
-    return val;
-  }
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -95,7 +71,7 @@ class _SideBarState extends State<SideBar>
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  color: Color(getColorHexFromStr('#66AF76')),
+                  color: Colors.grey[850],
                   // color: Colors.indigo[500],
                   child: Column(
                     children: <Widget>[
@@ -119,12 +95,39 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.person,
+                        icon: Icons.search,
                         title: "Search Doctors",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
                               .add(NavigationEvents.MyAccountClickedEvent);
+                        },
+                      ),
+                      MenuItem(
+                        icon: Icons.person,
+                        title: "Allergies",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.MyAllergiesClickedEvent);
+                        },
+                      ),
+                      MenuItem(
+                        icon: Icons.file_download,
+                        title: "Claims",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.MyClaimsClickedEvent);
+                        },
+                      ),
+                      MenuItem(
+                        icon: Icons.visibility,
+                        title: "Visits",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.MyVisitsClickedEvent);
                         },
                       ),
                       Divider(
@@ -157,7 +160,7 @@ class _SideBarState extends State<SideBar>
                     child: Container(
                       width: 35,
                       height: 110,
-                      color: Color(getColorHexFromStr('#66AF76')),
+                      color: Colors.grey[850],
                       // color: Colors.indigo[500],
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(

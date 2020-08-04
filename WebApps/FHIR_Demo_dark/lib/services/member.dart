@@ -2,22 +2,18 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class Member {
-  String memberFname;
-  String memberMname;
-  String memberLname;
-
   String dob;
+  String memberFname;
+  String memberLname;
+  String memberMname;
+  String memberFullName;
 
-  Member() {
-    getMemberDetails();
-  }
-
-  void getMemberDetails() async {
+  Future<dynamic> getMemberData() async {
     var url =
         'https://integration.cloud.tibcoapps.com:443/4hzvlzzwbj2p5mmfdo6z7i646rovcmqa/members/123456';
 
     final response = await http.get(url);
-    print('Response status: ${response.statusCode}');
+    print('Response status Member: ${response.statusCode}');
     print('Response body: ${response.body}');
 
     var details = json.decode(response.body);
@@ -27,16 +23,23 @@ class Member {
     memberMname = details["middle_name"];
   }
 
-  String getDateofBirth() {
+  String getDOB() {
     return dob;
   }
 
-  String getfName() {
+  String getMemberFname() {
     return memberFname;
   }
 
-  String getName() {
-    // getname();
-    return memberFname + ' ' + memberMname + ' ' + memberLname;
+  String getMemberLname() {
+    return memberLname;
+  }
+
+  String getMemberMname() {
+    return memberMname;
+  }
+
+  String getMemberFullName() {
+    return (memberFname + ' ' + memberMname + ' ' + memberLname);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:FHIR_Demo/pages/loading.dart';
 import 'package:flutter/material.dart';
 import 'sidebar/sidebar_layout.dart';
 
@@ -10,11 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/loading': (context) => Loading(),
+        '/memberhome': (context) => SideBarLayout(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'FHIR_Demo',
-      theme: ThemeData.dark(),
+      theme: ThemeData(),
 //      home: MyHomePage(title: 'FHIR_Demo Home Page'),
       home: SideBarLayout(),
+      initialRoute: '/loading',
     );
   }
 }

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../bloc/navigation_bloc/navigation_bloc.dart';
 
-class AllergiesPage extends StatefulWidget with NavigationStates {
+class VisitsPage extends StatefulWidget with NavigationStates {
   @override
-  _AllergiesPage createState() => _AllergiesPage();
+  _VisitsPage createState() => _VisitsPage();
 }
 
-class _AllergiesPage extends State<AllergiesPage> {
+class _VisitsPage extends State<VisitsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class _AllergiesPage extends State<AllergiesPage> {
         backgroundColor: Colors.grey[850],
         centerTitle: true, // this is all you need
         title: Text(
-          "ALLERGIES",
+          "Visits",
         ),
       ),
     );
