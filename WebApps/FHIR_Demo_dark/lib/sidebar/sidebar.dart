@@ -65,7 +65,7 @@ class _SideBarState extends State<SideBar>
           top: 0,
           bottom: 0,
           left: isSideBarOpenedAsync.data ? 0 : -screenWidth,
-          right: isSideBarOpenedAsync.data ? 0 : screenWidth - 45,
+          right: isSideBarOpenedAsync.data ? 0 : screenWidth - 40,
           child: Row(
             children: <Widget>[
               Expanded(
@@ -150,7 +150,7 @@ class _SideBarState extends State<SideBar>
                 ),
               ),
               Align(
-                alignment: Alignment(0, -0.9),
+                alignment: Alignment(0, -0.85),
                 child: GestureDetector(
                   onTap: () {
                     onIconPressed();
@@ -158,17 +158,18 @@ class _SideBarState extends State<SideBar>
                   child: ClipPath(
                     clipper: CustomMenuClipper(),
                     child: Container(
-                      width: 35,
-                      height: 110,
+                      width: 30,
+                      height: 100,
                       color: Colors.grey[850],
                       // color: Colors.indigo[500],
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
                         progress: _animationController.view,
                         icon: AnimatedIcons.menu_close,
-                        color: Colors.black87,
+                        color: Colors.white,
+                        // color: Colors.black87,
                         // color: Color(0xFF1BB5FD),
-                        size: 25,
+                        size: 20,
                       ),
                     ),
                   ),
@@ -206,3 +207,5 @@ class CustomMenuClipper extends CustomClipper<Path> {
     return true;
   }
 }
+
+// reference : https://www.youtube.com/watch?v=oExw0U4U_UI&t=490s

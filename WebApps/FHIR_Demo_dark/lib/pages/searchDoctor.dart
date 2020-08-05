@@ -11,15 +11,19 @@ class _searchDoctorPage extends State<searchDoctorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[500],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[850],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.0), // here the desired height
 
-        title: Text(
-          'Search Doctors',
-          // style: TextStyle(color: Colors.black),
+        child: AppBar(
+          backgroundColor: Colors.grey[850],
+
+          title: Text(
+            'Search Doctors',
+            // style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+          // backgroundColor: Colors.blue,
         ),
-        centerTitle: true,
-        // backgroundColor: Colors.blue,
       ),
       body: Container(
         alignment: Alignment.center,

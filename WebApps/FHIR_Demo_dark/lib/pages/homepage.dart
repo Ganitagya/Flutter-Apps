@@ -41,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     //initial color : #FDD148
                     // color: Color(getColorHexFromStr('#008D7B')), //initial color : #FDD148
                   ),
-                  Center(
-                    child: Positioned(
+                  Positioned(
+                    child: Center(
                       child: Container(
                         height: 400.0,
                         width: 400.0,
@@ -115,36 +115,103 @@ class _MyHomePageState extends State<MyHomePage> {
                                   topLeft: Radius.circular(20.0),
                                   topRight: Radius.circular(20.0))),
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 20.0,
+                                height: 45.0,
                               ),
-                              Text(
-                                'Member Details',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Quicksand',
-                                    fontSize: 15.0,
-                                    decoration: TextDecoration.underline,
-                                    fontWeight: FontWeight.bold),
+                              Center(
+                                child: Text(
+                                  'Member Details',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: 'Quicksand',
+                                      fontSize: 25.0,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
-                              SizedBox(height: 20.0),
-                              Text(
-                                'Member Name : ' + fullName,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Quicksand',
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                'Date of Birth    : ' + dateOfBirth,
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontFamily: 'Quicksand',
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
+                              SizedBox(height: 35.0),
+                              Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Member Name         : ' + fullName,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'Date of Birth            : ' +
+                                          dateOfBirth,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'Gender                     : ' + gender,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'Address First Line  : ' + addFirstLine,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'City                           : ' +
+                                          city,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'State                         : ' +
+                                          state,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'PostalCode              : ' + postalCode,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 10.0),
+                                    Text(
+                                      'Country                    : ' + country,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'Quicksand',
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: 300,
