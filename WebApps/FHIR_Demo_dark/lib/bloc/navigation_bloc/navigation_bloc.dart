@@ -1,17 +1,17 @@
 import 'package:bloc/bloc.dart';
-import 'package:FHIR_Demo/pages/searchDoctor.dart';
-import 'package:FHIR_Demo/pages/allergies.dart';
-import 'package:FHIR_Demo/pages/claims.dart';
-import 'package:FHIR_Demo/pages/visits.dart';
+import 'package:FHIR_Demo/pages/searchDoctorPage.dart';
+import 'package:FHIR_Demo/pages/medicationsPage.dart';
+import 'package:FHIR_Demo/pages/claimsPage.dart';
+import 'package:FHIR_Demo/pages/encountersPage.dart';
 
-import 'package:FHIR_Demo/pages/homepage.dart';
+import 'package:FHIR_Demo/pages/homePage.dart';
 
 enum NavigationEvents {
   HomePageClickedEvent,
   MyAccountClickedEvent,
-  MyAllergiesClickedEvent,
+  MyMedicationsClickedEvent,
   MyClaimsClickedEvent,
-  MyVisitsClickedEvent,
+  MyEncountersClickedEvent,
 }
 
 abstract class NavigationStates {}
@@ -29,14 +29,14 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
       case NavigationEvents.MyAccountClickedEvent:
         yield searchDoctorPage();
         break;
-      case NavigationEvents.MyAllergiesClickedEvent:
-        yield AllergiesPage();
+      case NavigationEvents.MyMedicationsClickedEvent:
+        yield MedicationsPage();
         break;
       case NavigationEvents.MyClaimsClickedEvent:
         yield ClaimsPage();
         break;
-      case NavigationEvents.MyVisitsClickedEvent:
-        yield VisitsPage();
+      case NavigationEvents.MyEncountersClickedEvent:
+        yield EncountersPage();
         break;
     }
   }

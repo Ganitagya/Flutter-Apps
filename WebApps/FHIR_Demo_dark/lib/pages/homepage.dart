@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:FHIR_Demo/bloc/navigation_bloc/navigation_bloc.dart';
 import '../bloc/navigation_bloc/navigation_bloc.dart';
-import 'package:FHIR_Demo/data/memberData.dart';
+import 'package:FHIR_Demo/services/memberService.dart';
 
 class HomePage extends StatelessWidget with NavigationStates {
   // This widget is the root of your application.

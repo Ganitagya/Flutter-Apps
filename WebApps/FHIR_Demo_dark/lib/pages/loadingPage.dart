@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-import 'package:FHIR_Demo/services/member.dart';
-import 'package:FHIR_Demo/data/memberData.dart';
+import 'package:FHIR_Demo/services/memberService.dart';
+import 'package:FHIR_Demo/services/encountersService.dart';
+import 'package:FHIR_Demo/services/claimsService.dart';
+import 'package:FHIR_Demo/services/medicationService.dart';
 
 class FadeAnimation extends StatelessWidget {
   final double delay;
@@ -9,25 +11,22 @@ class FadeAnimation extends StatelessWidget {
 
   FadeAnimation(this.delay, this.child);
 
-  void setupMember() async {
-    Member member = Member();
-    await member.getMemberData();
-    dateOfBirth = member.getDOB();
-    firstName = member.getMemberFname();
-    lastName = member.getMemberLname();
-    middleName = member.getMemberMname();
-    fullName = member.getMemberFullName();
-    addFirstLine = member.getAddFirstline();
-    gender = member.getGender();
-    city = member.getCity();
-    state = member.getState();
-    postalCode = member.getPostalCode();
-    country = member.getCountry();
-  }
-
   @override
   Widget build(BuildContext context) {
+    // Making the API calls while the user fills the login credentials
+
+    // setup member details
     setupMember();
+
+    // setup encounters
+    setupEncounters();
+
+    // setup Claims
+    setupClaims();
+
+    // setup Medications
+    setupMedications();
+
     final tween = MultiTrackTween([
       Track("opacity")
           .add(Duration(milliseconds: 500), Tween(begin: 0.0, end: 1.0)),

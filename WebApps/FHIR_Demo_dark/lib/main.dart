@@ -1,4 +1,4 @@
-import 'package:FHIR_Demo/pages/loading.dart';
+import 'package:FHIR_Demo/pages/loadingPage.dart';
 import 'package:flutter/material.dart';
 import 'sidebar/sidebar_layout.dart';
 
@@ -127,6 +127,7 @@ class HomePage extends StatelessWidget {
                             1.6,
                             Container(
                               height: 50,
+                              width: 200,
                               margin: EdgeInsets.symmetric(horizontal: 50),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
@@ -149,58 +150,9 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: 50,
                         ),
-                        FadeAnimation(
-                            1.7,
-                            Text(
-                              "Continue with social media",
-                              style: TextStyle(color: Colors.grey),
-                            )),
                         SizedBox(
                           height: 30,
                         ),
-                        Row(
-                          children: <Widget>[
-                            Expanded(
-                              child: FadeAnimation(
-                                  1.8,
-                                  Container(
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
-                                        color: Colors.black),
-                                    child: Center(
-                                      child: Text(
-                                        "Facebook",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  )),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            Expanded(
-                              child: FadeAnimation(
-                                  1.9,
-                                  Container(
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(50),
-                                        color: Colors.black),
-                                    child: Center(
-                                      child: Text(
-                                        "Gmail",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  )),
-                            )
-                          ],
-                        )
                       ],
                     ),
                   ),

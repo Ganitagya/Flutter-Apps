@@ -105,11 +105,11 @@ class _SideBarState extends State<SideBar>
                       ),
                       MenuItem(
                         icon: Icons.person,
-                        title: "Allergies",
+                        title: "Medications",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
-                              .add(NavigationEvents.MyAllergiesClickedEvent);
+                              .add(NavigationEvents.MyMedicationsClickedEvent);
                         },
                       ),
                       MenuItem(
@@ -123,11 +123,11 @@ class _SideBarState extends State<SideBar>
                       ),
                       MenuItem(
                         icon: Icons.visibility,
-                        title: "Visits",
+                        title: "Encounters",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
-                              .add(NavigationEvents.MyVisitsClickedEvent);
+                              .add(NavigationEvents.MyEncountersClickedEvent);
                         },
                       ),
                       Divider(
