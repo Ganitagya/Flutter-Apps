@@ -13,6 +13,7 @@ String state;
 String postalCode;
 String country;
 String email;
+String memberId;
 
 class Member {
   Future<dynamic> getMemberData() async {
@@ -36,6 +37,7 @@ class Member {
     postalCode = details["address"][0]["postalCode"];
     country = details["address"][0]["country"];
     email = details["telecom"][0]["value"];
+    memberId = details["id"];
   }
 }
 

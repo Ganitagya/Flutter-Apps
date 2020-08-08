@@ -9,6 +9,12 @@ class searchDoctorPage extends StatefulWidget with NavigationStates {
 class _searchDoctorPage extends State<searchDoctorPage> {
   @override
   Widget build(BuildContext context) {
+    print(
+        "===================================MediaQuery.of(context).size.width=======");
+    print(MediaQuery.of(context).size.width);
+    print(
+        "===================================MediaQuery.of(context).size.width=======");
+
     return Scaffold(
       backgroundColor: Colors.blue[300],
       appBar: PreferredSize(

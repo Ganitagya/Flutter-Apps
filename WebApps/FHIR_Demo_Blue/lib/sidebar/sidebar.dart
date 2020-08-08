@@ -71,7 +71,9 @@ class _SideBarState extends State<SideBar>
             children: <Widget>[
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
                   // color: Colors.lightBlueAccent,
                   color: Colors.indigo[500],
                   child: Column(
@@ -83,7 +85,7 @@ class _SideBarState extends State<SideBar>
                         children: [
                           Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 135.0,
+                            height: 115.0,
                             decoration: BoxDecoration(
                               color: Colors.blueAccent,
                               border: Border.all(
@@ -106,7 +108,7 @@ class _SideBarState extends State<SideBar>
                                 CircleAvatar(
                                   backgroundImage:
                                       AssetImage('assets/profile_pic.png'),
-                                  radius: 55.0,
+                                  radius: 45,
                                 ),
                                 SizedBox(
                                   width: 20.0,
@@ -122,7 +124,7 @@ class _SideBarState extends State<SideBar>
                                       style: TextStyle(
                                           fontFamily: 'Quicksand',
                                           color: Colors.white,
-                                          fontSize: 20.0,
+                                          fontSize: 15.0,
                                           fontWeight: FontWeight.normal),
                                     ),
                                     SizedBox(
@@ -165,6 +167,8 @@ class _SideBarState extends State<SideBar>
                         endIndent: 32,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 13,
+                        width: 9 * MediaQuery.of(context).size.height / 10,
                         decoration: BoxDecoration(
                             color: Colors.blueAccent,
                             border: Border.all(
@@ -172,23 +176,29 @@ class _SideBarState extends State<SideBar>
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 100),
-                          child: MenuItem(
-                            icon: Icons.home,
-                            title: "Home",
-                            onTap: () {
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context)
-                                  .add(NavigationEvents.HomePageClickedEvent);
-                            },
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitHeight,
+                              child: MenuItem(
+                                icon: Icons.home,
+                                title: "Home",
+                                onTap: () {
+                                  onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(
+                                      NavigationEvents.HomePageClickedEvent);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 13,
                         decoration: BoxDecoration(
                             color: Colors.blueAccent,
                             border: Border.all(
@@ -196,23 +206,29 @@ class _SideBarState extends State<SideBar>
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 100),
-                          child: MenuItem(
-                            icon: Icons.search,
-                            title: "Search Doctors",
-                            onTap: () {
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context)
-                                  .add(NavigationEvents.MyAccountClickedEvent);
-                            },
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitHeight,
+                              child: MenuItem(
+                                icon: Icons.search,
+                                title: "Search Doctors",
+                                onTap: () {
+                                  onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(
+                                      NavigationEvents.MyAccountClickedEvent);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 13,
                         decoration: BoxDecoration(
                             color: Colors.blueAccent,
                             border: Border.all(
@@ -220,23 +236,30 @@ class _SideBarState extends State<SideBar>
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 100),
-                          child: MenuItem(
-                            icon: Icons.add_circle,
-                            title: "Medications",
-                            onTap: () {
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(
-                                  NavigationEvents.MyMedicationsClickedEvent);
-                            },
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitHeight,
+                              child: MenuItem(
+                                icon: Icons.add_circle,
+                                title: "Medications",
+                                onTap: () {
+                                  onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(
+                                      NavigationEvents
+                                          .MyMedicationsClickedEvent);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 13,
                         decoration: BoxDecoration(
                             color: Colors.blueAccent,
                             border: Border.all(
@@ -244,23 +267,29 @@ class _SideBarState extends State<SideBar>
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 100),
-                          child: MenuItem(
-                            icon: Icons.content_paste,
-                            title: "Claims",
-                            onTap: () {
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context)
-                                  .add(NavigationEvents.MyClaimsClickedEvent);
-                            },
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitHeight,
+                              child: MenuItem(
+                                icon: Icons.content_paste,
+                                title: "Claims",
+                                onTap: () {
+                                  onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(
+                                      NavigationEvents.MyClaimsClickedEvent);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       SizedBox(
                         height: 10.0,
                       ),
                       Container(
+                        height: MediaQuery.of(context).size.height / 13,
                         decoration: BoxDecoration(
                             color: Colors.blueAccent,
                             border: Border.all(
@@ -268,64 +297,81 @@ class _SideBarState extends State<SideBar>
                             ),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 100),
-                          child: MenuItem(
-                            icon: Icons.visibility,
-                            title: "Encounters",
-                            onTap: () {
-                              onIconPressed();
-                              BlocProvider.of<NavigationBloc>(context).add(
-                                  NavigationEvents.MyEncountersClickedEvent);
-                            },
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitHeight,
+                              child: MenuItem(
+                                icon: Icons.visibility,
+                                title: "Encounters",
+                                onTap: () {
+                                  onIconPressed();
+                                  BlocProvider.of<NavigationBloc>(context).add(
+                                      NavigationEvents
+                                          .MyEncountersClickedEvent);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Divider(
-                        height: 64,
+                        height: 50,
                         thickness: 0.5,
                         color: Colors.black,
                         indent: 32,
                         endIndent: 32,
                       ),
-                      Row(
-                        children: [
-                          Column(
-                            children: [
-                              MenuItem(
-                                icon: Icons.settings,
-                                title: "Settings",
-                              ),
-                              MenuItem(
-                                icon: Icons.exit_to_app,
-                                title: "Logout",
-                                onTap: () {
-                                  BlocProvider.of<NavigationBloc>(context).add(
-                                      NavigationEvents.HomePageClickedEvent);
-                                },
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 100,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width / 4,
-                                height: 100.0,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  image: DecorationImage(
-                                      image: AssetImage('tibco-logo-menu1.png'),
-                                      fit: BoxFit.fill),
+                      Container(
+                        height: MediaQuery.of(context).size.height / 5.15,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                FittedBox(
+                                  fit: BoxFit.fitHeight,
+                                  child: MenuItem(
+                                    icon: Icons.settings,
+                                    title: "Settings",
+                                  ),
                                 ),
-                              ),
-                              Text("Powered By TIBCO")
-                            ],
-                          ),
-                        ],
+                                FittedBox(
+                                  fit: BoxFit.fitHeight,
+                                  child: MenuItem(
+                                    icon: Icons.exit_to_app,
+                                    title: "Logout",
+                                    onTap: () {
+                                      BlocProvider.of<NavigationBloc>(context)
+                                          .add(NavigationEvents
+                                              .HomePageClickedEvent);
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 100,
+                                  height: 65.0,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage('tibco-logo-menu1.png'),
+                                        fit: BoxFit.fill),
+                                  ),
+                                ),
+                                Text("Powered By TIBCO")
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

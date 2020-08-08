@@ -85,7 +85,7 @@ class HomePage extends StatelessWidget {
                                     "Welcome to XYZ Health-Care",
                                     style: TextStyle(
                                       color: Colors.blue[100],
-                                      fontSize: 30,
+                                      fontSize: 25,
                                     ),
                                   )),
                               SizedBox(
