@@ -119,35 +119,44 @@ class _SideBarState extends State<SideBar>
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
-                                      "Profile Name : $firstName",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
+                                    FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Text(
+                                        "Profile Name : $firstName",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
-                                      "Email : $email",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
+                                    FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Text(
+                                        "Mail : $email",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: 10,
                                     ),
-                                    Text(
-                                      "Birth Date : $dateOfBirth",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
+                                    FittedBox(
+                                      fit: BoxFit.fitWidth,
+                                      child: Text(
+                                        "Birth Date : $dateOfBirth",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
                                     ),
                                     SizedBox(
                                       height: 10,
