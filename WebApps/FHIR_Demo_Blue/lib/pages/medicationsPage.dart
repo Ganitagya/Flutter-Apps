@@ -10,9 +10,9 @@ class MedicationsPage extends StatefulWidget with NavigationStates {
 class _MedicationsPage extends State<MedicationsPage> {
   @override
   Widget build(BuildContext context) {
-    print("Inside medication page =========================");
-    print(medicationListForCard);
-    print("Inside medication page =========================");
+    // print("Inside medication page =========================");
+    // print(medicationListForCard);
+    // print("Inside medication page =========================");
     return Scaffold(
       backgroundColor: Colors.blue[300],
       appBar: PreferredSize(
@@ -27,7 +27,7 @@ class _MedicationsPage extends State<MedicationsPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(45, 20, 45, 20),
+        padding: const EdgeInsets.fromLTRB(35, 20, 20, 20),
         child: Column(
           children: medicationListForCard.map((medication) {
             return Padding(
