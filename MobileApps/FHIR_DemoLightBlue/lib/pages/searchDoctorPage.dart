@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../bloc/navigation_bloc/navigation_bloc.dart';
 import 'package:FHIR_Demo/services/searchService.dart';
-import 'package:FHIR_Demo/services/listOfAllDoctors.dart';
+//import 'package:FHIR_Demo/services/listOfAllDoctors.dart';
 
-class searchDoctorPage extends StatefulWidget with NavigationStates {
+class SearchDoctorPage extends StatefulWidget with NavigationStates {
   @override
   _searchDoctorPage createState() => _searchDoctorPage();
 }
 
-class _searchDoctorPage extends State<searchDoctorPage> {
+class _searchDoctorPage extends State<SearchDoctorPage> {
   final formKey = GlobalKey<FormState>();
 
   String locationOfDoctor;
@@ -37,255 +37,256 @@ class _searchDoctorPage extends State<searchDoctorPage> {
           // backgroundColor: Colors.blue,
         ),
       ),
-      body: Container(
-        color: Colors.white,
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 80,
-            ),
-            Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 50),
-                  child: Container(
-                    height: 450.0,
-                    decoration: BoxDecoration(
-                      color: Colors.blue[600],
-                      border: Border.all(
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                    child: Container(
+                      height: 450.0,
+                      decoration: BoxDecoration(
                         color: Colors.blue[600],
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Container(
-                        // height: 160.0,
-                        decoration: BoxDecoration(
+                        border: Border.all(
                           color: Colors.blue[600],
-                          border: Border.all(
-                            color: Colors.blueAccent,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Container(
+                          // height: 160.0,
+                          decoration: BoxDecoration(
+                            color: Colors.blue[600],
+                            border: Border.all(
+                              color: Colors.blueAccent,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Filter Your Search",
-                          style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              color: Colors.white,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Specialization: ",
-                          style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              color: Colors.white,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 120),
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Theme(
-                                      data: ThemeData(
-                                          unselectedWidgetColor: Colors.white),
-                                      child: Checkbox(
-                                          value: checkInternalMedicine,
-                                          onChanged: (bool value) {
-                                            setState(
-                                              () {
-                                                print(value);
-                                                checkInternalMedicine = value;
-                                              },
-                                            );
-                                          }),
-                                    ),
-                                    Text(
-                                      "Internal Medicine",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Theme(
-                                      data: ThemeData(
-                                          unselectedWidgetColor: Colors.white),
-                                      child: Checkbox(
-                                          value: checkCardiology,
-                                          onChanged: (bool value) {
-                                            setState(
-                                              () {
-                                                print(value);
-                                                checkCardiology = value;
-                                              },
-                                            );
-                                          }),
-                                    ),
-                                    Text(
-                                      "Cardiology",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Theme(
-                                      data: ThemeData(
-                                          unselectedWidgetColor: Colors.white),
-                                      child: Checkbox(
-                                          value: checkObg,
-                                          onChanged: (bool value) {
-                                            setState(
-                                              () {
-                                                print(value);
-                                                checkObg = value;
-                                              },
-                                            );
-                                          }),
-                                    ),
-                                    Text(
-                                      "OBG/YN",
-                                      style: TextStyle(
-                                          fontFamily: 'Quicksand',
-                                          color: Colors.white,
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          left: MediaQuery.of(context).size.width / 4.65,
-                          right: MediaQuery.of(context).size.width / 4.65),
-                      child: Column(
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Looking for a specific location?",
-                                style: TextStyle(
-                                    fontFamily: 'Quicksand',
-                                    color: Colors.white,
-                                    fontSize: 12.0,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ],
+                          Text(
+                            "Filter Your Search",
+                            style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                color: Colors.white,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Specialization: ",
+                            style: TextStyle(
+                                fontFamily: 'Quicksand',
+                                color: Colors.white,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
                             height: 10,
                           ),
-                          Material(
-                            elevation: 5.0,
-                            borderRadius: BorderRadius.circular(5.0),
-                            child: Form(
-                              key: formKey,
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(
-                                    Icons.location_searching,
-                                    // color: Color(getColorHexFromStr('#FEDF62')),
-                                    size: 30.0,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 120),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                            unselectedWidgetColor: Colors.white),
+                                        child: Checkbox(
+                                            value: checkInternalMedicine,
+                                            onChanged: (bool value) {
+                                              setState(
+                                                () {
+                                                  print(value);
+                                                  checkInternalMedicine = value;
+                                                },
+                                              );
+                                            }),
+                                      ),
+                                      Text(
+                                        "Internal Medicine",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ],
                                   ),
-                                  contentPadding:
-                                      EdgeInsets.only(left: 15.0, top: 15.0),
-                                  hintText: 'Enter Location',
-                                  hintStyle: TextStyle(
-                                      color: Colors.blue[700],
-                                      fontFamily: 'Quicksand'),
-                                ),
-                                validator: (input) => input == '' ? null : null,
-                                onSaved: (String value) {
-                                  locationOfDoctor = value;
-                                },
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                            unselectedWidgetColor: Colors.white),
+                                        child: Checkbox(
+                                            value: checkCardiology,
+                                            onChanged: (bool value) {
+                                              setState(
+                                                () {
+                                                  print(value);
+                                                  checkCardiology = value;
+                                                },
+                                              );
+                                            }),
+                                      ),
+                                      Text(
+                                        "Cardiology",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Theme(
+                                        data: ThemeData(
+                                            unselectedWidgetColor: Colors.white),
+                                        child: Checkbox(
+                                            value: checkObg,
+                                            onChanged: (bool value) {
+                                              setState(
+                                                () {
+                                                  print(value);
+                                                  checkObg = value;
+                                                },
+                                              );
+                                            }),
+                                      ),
+                                      Text(
+                                        "OB/GYN",
+                                        style: TextStyle(
+                                            fontFamily: 'Quicksand',
+                                            color: Colors.white,
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    RaisedButton(
-                      child: Text("Search"),
-                      onPressed: () async {
-                        if (!formKey.currentState.validate()) {
-                          formKey.currentState.save();
-                          print("with validation");
-                          searchDoctors(locationOfDoctor);
-                        } else {
-                          formKey.currentState.save();
-                          print("without validation");
-                          await searchDoctors(locationOfDoctor);
-                          print("returned with searched doctors");
-                          showSearch(
-                              context: context, delegate: doctorSearch());
-                        }
-                      },
-                    )
-                    MaterialButton(onPressed: null)
-                  ],
-                ),
-              ],
-            ),
-          ],
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width / 4.65,
+                            right: MediaQuery.of(context).size.width / 4.65),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Looking for a specific location?",
+                                  style: TextStyle(
+                                      fontFamily: 'Quicksand',
+                                      color: Colors.white,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.normal),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Material(
+                              elevation: 5.0,
+                              borderRadius: BorderRadius.circular(5.0),
+                              child: Form(
+                                key: formKey,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    prefixIcon: Icon(
+                                      Icons.location_searching,
+                                      // color: Color(getColorHexFromStr('#FEDF62')),
+                                      size: 30.0,
+                                    ),
+                                    contentPadding:
+                                        EdgeInsets.only(left: 15.0, top: 15.0),
+                                    hintText: 'Enter Location',
+                                    hintStyle: TextStyle(
+                                        color: Colors.blue[700],
+                                        fontFamily: 'Quicksand'),
+                                  ),
+                                  validator: (input) => input == '' ? null : null,
+                                  onSaved: (String value) {
+                                    locationOfDoctor = value;
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      RaisedButton(
+                        child: Text("Search"),
+                        onPressed: () async {
+                          if (!formKey.currentState.validate()) {
+                            formKey.currentState.save();
+                            print("with validation");
+                            searchDoctors(locationOfDoctor);
+                          } else {
+                            formKey.currentState.save();
+                            print("without validation");
+                            await searchDoctors(locationOfDoctor);
+                            print("returned with searched doctors");
+                            showSearch(
+                                context: context, delegate: doctorSearch());
+                          }
+                        },
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -390,17 +391,17 @@ class doctorSearch extends SearchDelegate<String> {
                                         CrossAxisAlignment.center,
                                     children: [
                                       SizedBox(
-                                        height: 35,
+                                        height: 25,
                                       ),
                                       this.gender == "male"
                                           ? CircleAvatar(
                                               backgroundImage:
-                                                  AssetImage('maledoctor.jpeg'),
+                                                  AssetImage('assets/maledoctor.jpeg'),
                                               radius: 60.0,
                                             )
                                           : CircleAvatar(
                                               backgroundImage: AssetImage(
-                                                  'femaledoctor.png'),
+                                                  'assets/femaledoctor.png'),
                                               radius: 60.0,
                                             ),
                                       SizedBox(
@@ -483,33 +484,33 @@ class doctorSearch extends SearchDelegate<String> {
                                       SizedBox(
                                         height: 15,
                                       ),
-                                      Row(
-                                        // mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "Gender :",
-                                            style: TextStyle(
-                                                fontFamily: 'Quicksand',
-                                                color: Colors.white,
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.normal),
-                                          ),
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          Text(
-                                            this.gender,
-                                            style: TextStyle(
-                                                fontFamily: 'Quicksand',
-                                                color: Colors.white,
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.normal),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 15,
-                                      ),
+//                                      Row(
+//                                        // mainAxisAlignment: MainAxisAlignment.center,
+//                                        children: [
+//                                          Text(
+//                                            "Gender :",
+//                                            style: TextStyle(
+//                                                fontFamily: 'Quicksand',
+//                                                color: Colors.white,
+//                                                fontSize: 20.0,
+//                                                fontWeight: FontWeight.normal),
+//                                          ),
+//                                          SizedBox(
+//                                            width: 5,
+//                                          ),
+//                                          Text(
+//                                            this.gender,
+//                                            style: TextStyle(
+//                                                fontFamily: 'Quicksand',
+//                                                color: Colors.white,
+//                                                fontSize: 18.0,
+//                                                fontWeight: FontWeight.normal),
+//                                          ),
+//                                        ],
+//                                      ),
+//                                      SizedBox(
+//                                        height: 15,
+//                                      ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
@@ -558,7 +559,7 @@ class doctorSearch extends SearchDelegate<String> {
                                         children: [
                                           Row(
                                             children: [
-                                              Text("\t \t"),
+                                              Text("\t \t \t \t \t \t \t"),
                                             ],
                                           ),
                                           Column(
@@ -646,9 +647,13 @@ class doctorSearch extends SearchDelegate<String> {
           showResults(context);
         },
         leading: Icon(Icons.person),
-        title: Text(suggestionsList[index]["suffix"] +
+        title: Text(suggestionsList[index]["givenName"] +
             " " +
-            suggestionsList[index]["familyName"]),
+            suggestionsList[index]["familyName"] +
+        " , " +
+            suggestionsList[index]["suffix"] +
+        " \t\t -- " +
+        suggestionsList[index]["specialization"]),
       ),
       itemCount: suggestionsList.length,
     );
