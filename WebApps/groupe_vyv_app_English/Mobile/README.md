@@ -11,6 +11,6 @@ This is a collection of some of my flutter hands ons
   2.4 flutter devices<br />
   
  3. clone this repo 
- 4. cd WebApps/groupe_vyv_app
+ 4. cd groupe_vyv_app
  5. flutter run -d web-server --web-port=33051
  6. Open a browser and use the URL : http://localhost:33051
