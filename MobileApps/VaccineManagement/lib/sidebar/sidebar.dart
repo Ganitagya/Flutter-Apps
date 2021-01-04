@@ -124,6 +124,7 @@ class _SideBarState extends State<SideBar>
                                     FittedBox(
                                       fit: BoxFit.fitWidth,
                                       child: Text(
+                                        // "Profile Name : Akash",
                                         "Profile Name : $firstName",
                                         style: TextStyle(
                                             fontFamily: 'Quicksand',
@@ -138,6 +139,7 @@ class _SideBarState extends State<SideBar>
                                     FittedBox(
                                       fit: BoxFit.fitWidth,
                                       child: Text(
+                                        // "Mail : email@email.com",
                                         "Mail : $email",
                                         style: TextStyle(
                                             fontFamily: 'Quicksand',

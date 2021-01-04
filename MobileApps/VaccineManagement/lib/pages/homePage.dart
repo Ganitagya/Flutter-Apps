@@ -102,8 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        // 'Hello, ' + firstName,
-                        'Hello, ' + 'Akash',
+                        'Hello, ' + firstName,
+                        // 'Hello, ' + 'Akash',
                         style: TextStyle(
                             fontFamily: 'Quicksand',
                             color: Colors.white,
@@ -177,8 +177,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                               height: 5,
                                             ),
                                             Text(
-                                              "Male",
-                                              // "$gender",
+                                              // "Male",
+                                              "$gender",
                                               style: TextStyle(
                                                   fontFamily: 'Quicksand',
                                                   color: Colors.white,
@@ -203,8 +203,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                             FittedBox(
                                               fit: BoxFit.fitWidth,
                                               child: Text(
-                                                "March 2020",
-                                                // "$dateOfBirth",
+                                                // "March 2020",
+                                                "$dateOfBirth",
                                                 style: TextStyle(
                                                     fontFamily: 'Quicksand',
                                                     color: Colors.white,
@@ -301,8 +301,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   child: FittedBox(
                                                     fit: BoxFit.fitWidth,
                                                     child: Text(
-                                                      'Pune 411006',
-                                                      // '$city $postalCode',
+                                                      // 'Pune 411006',
+                                                      '$city $postalCode',
                                                       style: TextStyle(
                                                           fontFamily:
                                                               'Quicksand',
@@ -368,8 +368,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "email@email.com",
-                                                // "$email",
+                                                // "email@email.com",
+                                                "$email",
                                                 style: TextStyle(
                                                     fontFamily: 'Quicksand',
                                                     color: Colors.white,
@@ -578,8 +578,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width:
                                   (MediaQuery.of(context).size.width - 64) / 2,
                               child: Text(
-                                '89',
-                                // '$memberId',
+                                // '89',
+                                '$memberId',
                                 style: TextStyle(
                                   fontFamily: 'Quicksand',
                                   color: Colors.white,
@@ -652,8 +652,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width:
                                   (MediaQuery.of(context).size.width - 64) / 2,
                               child: Text(
-                                'Akash',
-                                // '$firstName',
+                                // 'Akash',
+                                '$firstName',
                                 style: TextStyle(
                                   fontFamily: 'Quicksand',
                                   color: Colors.white,

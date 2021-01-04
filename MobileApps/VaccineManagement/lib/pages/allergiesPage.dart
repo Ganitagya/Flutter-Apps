@@ -46,7 +46,7 @@ class _AllergiesPage extends State<AllergiesPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Allergies",
+                          "Allergy Type A",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -61,7 +61,7 @@ class _AllergiesPage extends State<AllergiesPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'AllergiesCode: ',
+                          'Allergy Code 123: ',
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -91,7 +91,7 @@ class _AllergiesPage extends State<AllergiesPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "eee",
+                          "Details about allergy",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -113,7 +113,7 @@ class _AllergiesPage extends State<AllergiesPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "dd",
+                          "Normal",
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -141,7 +141,7 @@ class _AllergiesPage extends State<AllergiesPage> {
                       children: [
                         Flexible(
                           child: Text(
-                            "ddd",
+                            "Any special care needed for medications",
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Quicksand',

@@ -46,7 +46,7 @@ class _EncountersPage extends State<EncountersPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Vaccination Type",
+                          encounterType,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -69,7 +69,7 @@ class _EncountersPage extends State<EncountersPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Vaccination",
+                          encounterCode,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -83,7 +83,7 @@ class _EncountersPage extends State<EncountersPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          'Vaccination Detail: ',
+                          'Vaccination Details: ',
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -91,7 +91,7 @@ class _EncountersPage extends State<EncountersPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Vaccination",
+                          encounterTypeDetail,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -113,7 +113,7 @@ class _EncountersPage extends State<EncountersPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "Vaccination",
+                          encounterTypePriority,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -141,7 +141,7 @@ class _EncountersPage extends State<EncountersPage> {
                       children: [
                         Flexible(
                           child: Text(
-                            "Vaccination",
+                            encounterNotes,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'Quicksand',

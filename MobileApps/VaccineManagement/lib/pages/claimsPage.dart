@@ -46,7 +46,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "doctorReference",
+                          doctorReference,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -69,7 +69,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim",
+                          claimPriority,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -91,7 +91,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim",
+                          claimCoverageId,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -113,7 +113,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim",
+                          claimServiceDate,
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -135,7 +135,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim".toString(),
+                          claimAmount.toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -157,7 +157,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim".toString(),
+                          claimAdjudicatedAmount.toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
@@ -179,7 +179,7 @@ class _ClaimsPage extends State<ClaimsPage> {
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
-                          "claim".toString(),
+                          claimOutOfPocket.toString(),
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
