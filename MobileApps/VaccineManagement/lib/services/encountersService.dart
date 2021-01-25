@@ -26,7 +26,7 @@ class Encounter {
     //Uncomment till here and delete from here
     encounterCode = "Vaccination Code";
     encounterType = "Vaccination Type";
-    encounterTypeDetail = "Vaccination Details";
+    encounterTypeDetail = "Vaccine Details";
     encounterTypePriority = 'Normal';
     encounterNotes = "Any notes provided by the doctor while vaccinating";
 

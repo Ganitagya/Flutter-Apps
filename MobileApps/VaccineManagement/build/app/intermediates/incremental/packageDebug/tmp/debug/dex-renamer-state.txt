@@ -1,4 +1,4 @@
-#Mon Jan 04 13:22:01 IST 2021
+#Thu Jan 14 14:05:25 IST 2021
 base.0=/Users/amahapat/Developer/FlutterApps/VaccineManagement/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

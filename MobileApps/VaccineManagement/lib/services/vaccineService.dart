@@ -1,0 +1,1 @@
+int vaccineDone = 0;

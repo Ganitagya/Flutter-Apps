@@ -47,6 +47,6 @@ void setupClaims() {
   Claim claim = Claim();
   claim.getClaimsData();
 
-  print("=====Inside Claims=====");
-  print(claimAmount);
+  // print("=====Inside Claims=====");
+  // print(claimAmount);
 }

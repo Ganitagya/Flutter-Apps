@@ -317,12 +317,12 @@ class _SideBarState extends State<SideBar>
                               fit: BoxFit.fitHeight,
                               child: MenuItem(
                                 icon: Icons.visibility,
-                                title: "Encounters",
+                                title: "Vaccine Records",
                                 onTap: () {
                                   onIconPressed();
                                   BlocProvider.of<NavigationBloc>(context).add(
                                       NavigationEvents
-                                          .MyEncountersClickedEvent);
+                                          .MyVaccineRecordsClickedEvent);
                                 },
                               ),
                             ),

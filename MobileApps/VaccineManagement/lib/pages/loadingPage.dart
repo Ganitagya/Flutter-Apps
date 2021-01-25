@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-import 'package:FHIR_Demo/services/memberService.dart';
-import 'package:FHIR_Demo/services/encountersService.dart';
-import 'package:FHIR_Demo/services/claimsService.dart';
-import 'package:FHIR_Demo/services/medicationService.dart';
 
 class FadeAnimation extends StatelessWidget {
   final double delay;
@@ -13,19 +9,6 @@ class FadeAnimation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Making the API calls while the user fills the login credentials
-
-    // setup member details
-    setupMember();
-
-    // setup encounters
-    setupEncounters();
-
-    // setup Claims
-    setupClaims();
-
-    // setup Medications
-    setupMedications();
 
     final tween = MultiTrackTween([
       Track("opacity")
@@ -45,6 +28,7 @@ class FadeAnimation extends StatelessWidget {
         child: Transform.translate(
             offset: Offset(0, animation["translateY"]), child: child),
       ),
+
     );
   }
 }
