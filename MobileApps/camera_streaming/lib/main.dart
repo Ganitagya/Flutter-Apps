@@ -21,12 +21,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late CameraController controller;
+  int cameraIndex = 0;
   bool isStreaming = false;
 
   @override
   void initState() {
     super.initState();
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    controller = CameraController(cameras[cameraIndex], ResolutionPreset.medium);
     controller.initialize().then((_) {
       if (!mounted) {
         return;
@@ -49,13 +50,28 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Live Traffic Monitoring"),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.traffic_rounded,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text("Live Camera Monitoring"),
+            ],
+          ),
       ),
+
       body: isStreaming
-          ? Column(
+      ? Column(
         children: <Widget>[
           SizedBox(
             width: double.infinity,
@@ -64,12 +80,44 @@ class _MyAppState extends State<MyApp> {
               child: CameraPreview(controller),
             ),
           ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            child: FloatingActionButton(
+              // color: Colors.blue,
+              onPressed: () {
+                setState(() {
+                  cameraIndex = cameraIndex == 0 ? 1 : 0;
+                  controller = CameraController(cameras[cameraIndex], ResolutionPreset.medium);
+                  controller.initialize().then((_) {
+                    if (!mounted) {
+                      return;
+                    }
+                    setState(() {});
+                  });
+                });
+              },
+              child: const Icon(
+                Icons.cameraswitch_rounded,
+              ),
+            ),
+          ),
         ],
       )
           : Center(
         child: ElevatedButton(
           onPressed: startStream,
-          child: const Text("Start Stream"),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: const [
+              Icon(
+                Icons.not_started_rounded,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text("Start Stream"),
+            ],
+          ),
         ),
       ),
     );
