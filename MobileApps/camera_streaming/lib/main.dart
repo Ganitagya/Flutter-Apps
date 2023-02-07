@@ -73,11 +73,14 @@ class _MyAppState extends State<MyApp> {
       body: isStreaming
       ? Column(
         children: <Widget>[
-          SizedBox(
-            width: double.infinity,
-            child: AspectRatio(
-              aspectRatio: controller.value.aspectRatio,
-              child: CameraPreview(controller),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 5.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: AspectRatio(
+                aspectRatio: controller.value.aspectRatio,
+                child: CameraPreview(controller),
+              ),
             ),
           ),
           Container(
