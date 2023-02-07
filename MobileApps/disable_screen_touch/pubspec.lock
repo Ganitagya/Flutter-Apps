@@ -83,6 +83,11 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   js:
     dependency: transitive
     description:
@@ -131,6 +136,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      sha256: c3ebbff365bfb1b5f7b690c9857d2dabea167f35b05eb7586186499b407efb37
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -184,6 +197,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
+  url_launcher:
+    dependency: "direct main"
+    description:
+      name: url_launcher
+      sha256: e1e0c46fcd777c0f0bd7f4541b747c28ad4e925f93344cebf667ef76c695533a
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.7.10"
+  url_launcher_linux:
+    dependency: transitive
+    description:
+      name: url_launcher_linux
+      sha256: c489023cdd864a19c0be63bb3796bec21ea4bc16bfe09568953f1828e02151c9
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+4"
+  url_launcher_macos:
+    dependency: transitive
+    description:
+      name: url_launcher_macos
+      sha256: be04eac5076414469027ce068c360478c3e56e43205bb7efaaa61cbdd3ba890d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+9"
+  url_launcher_platform_interface:
+    dependency: transitive
+    description:
+      name: url_launcher_platform_interface
+      sha256: c6bd00f46e8c348703d0ae691850eb2052be8e1338dc3ae6f72af53b962da157
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.9"
+  url_launcher_web:
+    dependency: transitive
+    description:
+      name: url_launcher_web
+      sha256: eaa6de8ac353681794533edcedd69dd8b39ed987bf2360d172185eff8283dbc2
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.5+3"
+  url_launcher_windows:
+    dependency: transitive
+    description:
+      name: url_launcher_windows
+      sha256: "034479b1dafd8f01de81267d8117eb5ae019e0dddcc23f4b14ed31253a2635d9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1+3"
   vector_math:
     dependency: transitive
     description:

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyApp(key: UniqueKey(),));
 
 class MyApp extends StatefulWidget {
+  MyApp({required Key key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -17,17 +20,27 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: Stack(
           children: [
-            // Your Brave browser content goes here
-            // ...
-               InAppWebView(
-                initialUrlRequest: URLRequest(
-                    url: Uri.parse("https://www.youtube.com/")
-                ),
+            Center(
+              child: ElevatedButton(
+                child: const Text('Open Brave Browser'),
+                onPressed: () async {
+                  setState(() {
+                    _overlayVisible = !_overlayVisible;
+                  });
+                  var url = 'https://flutter.dev/';
+                  if (await canLaunch(url)) {
+                    await launch(url, forceSafariVC: false, forceWebView: false);
+                  } else {
+                    throw 'Could not launch $url';
+                  }
+                },
               ),
-
-
-
-            // Overlay
+            ),
+            // InAppWebView(
+            //   initialUrlRequest: URLRequest(
+            //       url: Uri.parse("https://www.youtube.com/")
+            //   ),
+            // ),
             if (_overlayVisible)
               Container(
                 color: Colors.black54,
