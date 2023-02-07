@@ -7,7 +7,9 @@ List<CameraDescription> cameras = [];
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
-  runApp(MyApp());
+  runApp(const MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -19,6 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late CameraController controller;
+  bool isStreaming = false;
 
   @override
   void initState() {
@@ -38,19 +41,36 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
+  startStream() {
+    setState(() {
+      isStreaming = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (!controller.value.isInitialized) {
-      return  Container();
-    }
-    return  Directionality(
-      textDirection: TextDirection.ltr,
-      child:  Stack(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Live Traffic Monitoring"),
+      ),
+      body: isStreaming
+          ? Column(
         children: <Widget>[
-           AspectRatio(
+          SizedBox(
+            width: double.infinity,
+            child: AspectRatio(
               aspectRatio: controller.value.aspectRatio,
-              child:  CameraPreview(controller)),
+              child: CameraPreview(controller),
+            ),
+          ),
         ],
+      )
+          : Center(
+        child: ElevatedButton(
+          onPressed: startStream,
+          child: const Text("Start Stream"),
+        ),
       ),
     );
   }
