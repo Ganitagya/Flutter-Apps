@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:camera/camera.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 List<CameraDescription> cameras = [];
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
-  runApp(const MaterialApp(
-    home: MyApp(),
+
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primarySwatch: Colors.orange,
+      textTheme: GoogleFonts.latoTextTheme(),
+      scaffoldBackgroundColor: Colors.orange[100],
+    ),
+    home: const MyApp(),
   ));
+
 }
 
 class MyApp extends StatefulWidget {
@@ -38,7 +46,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    controller?.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -58,7 +66,7 @@ class _MyAppState extends State<MyApp> {
         centerTitle: true,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children:  const [
               Icon(
                 Icons.traffic_rounded,
               ),
@@ -73,9 +81,13 @@ class _MyAppState extends State<MyApp> {
       body: isStreaming
       ? Column(
         children: <Widget>[
+          // const SizedBox(
+          //   height: 20,
+          // ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 5.0),
+            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
             child: SizedBox(
+              height: 550,
               width: double.infinity,
               child: AspectRatio(
                 aspectRatio: controller.value.aspectRatio,
