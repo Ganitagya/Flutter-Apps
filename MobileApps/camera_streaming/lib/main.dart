@@ -1,6 +1,8 @@
+import 'package:camera_streaming/signaling.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:camera/camera.dart';
+import 'package:flutter_webrtc/flutter_webrtc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 List<CameraDescription> cameras = [];
@@ -28,12 +30,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Signaling signaling = Signaling();
+  final RTCVideoRenderer _localRenderer = RTCVideoRenderer();
+  final RTCVideoRenderer _remoteRenderer = RTCVideoRenderer();
+  String? roomId;
+  TextEditingController textEditingController = TextEditingController(text: '');
+
   late CameraController controller;
   int cameraIndex = 0;
   bool isStreaming = false;
 
   @override
   void initState() {
+
+    _localRenderer.initialize();
+    _remoteRenderer.initialize();
+
+    signaling.onAddRemoteStream = ((stream) {
+      _remoteRenderer.srcObject = stream;
+      setState(() {});
+    });
+
+
     super.initState();
     controller = CameraController(cameras[cameraIndex], ResolutionPreset.medium);
     controller.initialize().then((_) {
@@ -46,6 +64,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
+    _localRenderer.dispose();
+    _remoteRenderer.dispose();
+
     controller.dispose();
     super.dispose();
   }
